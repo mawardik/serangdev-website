@@ -1,12 +1,11 @@
-import type { Metadata } from "next";
-import { Bricolage_Grotesque } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import Particles from "@/components/ui/Particles";
+import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  weight: ["400", "600", "700"],
   variable: "--font-bricolage",
   display: "swap",
 });
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Jasa pembuatan website profesional di Serang & Banten. Solusi website UMKM, instansi, dan perusahaan dengan desain modern, performa cepat, dan SEO optimal.",
+    "Jasa pembuatan website profesional di Serang & Banten. Website cepat, modern, SEO friendly untuk UMKM, Instansi Pemerintah, Lembaga Pendidikan & perusahaan.",
 
   keywords: [
     "jasa pembuatan website serang",
@@ -28,12 +27,11 @@ export const metadata: Metadata = {
     "web developer serang",
     "website umkm serang",
     "jasa website profesional",
+    "jasa website Sekolah",
+    "jasa website Perusahaan",
+    "jasa website custom",
+    "jasa website Dinas",
   ],
-
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-icon.png",
-  },
 
   authors: [{ name: "SerangDev" }],
   creator: "SerangDev",
@@ -42,6 +40,10 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+
+  alternates: {
+    canonical: "https://serangdev.com",
   },
 
   openGraph: {
@@ -66,19 +68,18 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SerangDev | Jasa Website Profesional",
     description:
-      "Website modern dan cepat untuk UMKM & perusahaan di Serang.",
+      "Website cepat & modern untuk bisnis di Serang & Banten.",
     images: ["/og-image.jpg"],
   },
 
-  alternates: {
-    canonical: "https://serangdev.com",
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 
-export const viewport = {
+export const viewport: Viewport = {
   themeColor: "#050638",
 };
-
 
 export default function RootLayout({
   children,
@@ -88,35 +89,38 @@ export default function RootLayout({
   return (
     <html lang="id" className={bricolage.variable}>
       <head>
-
-        {/* Google Analytics 4 */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-          strategy="afterInteractive"
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-        >
+        {/* Google Tag Manager Script (HEAD) */}
+        <Script id="gtm-script" strategy="afterInteractive">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX', {
-              page_path: window.location.pathname,
-            });
+            (function(w,d,s,l,i){w[l]=w[l]||[];
+            w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;
+            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+            f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-T3THR8BD');
           `}
         </Script>
-
       </head>
 
-      <body className="font-sans bg-black text-white antialiased">
-        <Particles />
+      <body className="bg-[#050638] text-white antialiased">
+
+        {/* Google Tag Manager (NOSCRIPT - BODY) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-T3THR8BD"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
         {children}
 
-        {/* LocalBusiness Structured Data */}
+        {/* Schema.org LocalBusiness */}
         <Script
-          id="schema-org"
+          id="schema-localbusiness"
           type="application/ld+json"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -124,9 +128,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               name: "SerangDev",
-              image: "https://serangdev.com/logo-serangdev.png",
-              url: "https://serangdev.com",
-              telephone: "+62-8xxxxxxxxxx",
+              url: "https://www.serangdev.com",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Serang",

@@ -1,10 +1,3 @@
-"use client";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-
 import { Star, Quote } from "lucide-react";
 
 const testimonials = [
@@ -40,53 +33,56 @@ export default function Trust() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-600/10 blur-[100px] rounded-full -z-10" />
 
       <div className="max-w-7xl mx-auto px-6">
-        
-        <div className="text-center mb-16">
+
+        {/* Header */}
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Dipercaya oleh <span className="text-gradient">Industri</span>
           </h2>
-          <p className="text-gray-400">Kata mereka yang telah bertransformasi digital bersama kami.</p>
+          <p className="text-gray-400">
+            Kata mereka yang telah bertransformasi digital bersama kami.
+          </p>
         </div>
 
-        <Swiper
-          modules={[Autoplay, Pagination]}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-          pagination={{ clickable: true }}
-          loop
-          spaceBetween={30}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          className="pb-16"
-        >
+        {/* Horizontal Scroll Container */}
+        <div className="flex gap-8 overflow-x-auto snap-x snap-mandatory pb-6 scrollbar-hide">
           {testimonials.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div className="relative h-full glass-panel p-8 rounded-3xl border border-white/5 hover:border-purple-500/30 transition-all duration-300 group">
-                <Quote className="absolute top-6 right-6 text-white/5 w-12 h-12 group-hover:text-purple-500/20 transition-colors" />
-                <div className="flex gap-1 mb-6">
-                  {[...Array(item.rating)].map((_, i) => (
-                    <Star key={i} size={18} className="text-yellow-500 fill-yellow-500" />
-                  ))}
-                </div>
-                <p className="text-gray-300 text-lg leading-relaxed mb-8 min-h-[80px]">
-                  &ldquo;{item.text}&rdquo;
-                </p>
-                <div className="flex items-center gap-4 mt-auto border-t border-white/5 pt-6">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-white font-bold text-sm">
-                    {item.name.charAt(0)}
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold text-sm">{item.name}</h4>
-                    <p className="text-xs text-purple-400">{item.role}</p>
-                  </div>
-                </div>
+            <div
+              key={index}
+              className="snap-start min-w-[85%] sm:min-w-[60%] lg:min-w-[32%] 
+              glass-panel p-8 rounded-3xl border border-white/5 
+              hover:border-purple-500/30 transition-all duration-300 flex flex-col"
+            >
+              <Quote className="absolute opacity-5 w-12 h-12" />
 
+              <div className="flex gap-1 mb-6">
+                {[...Array(item.rating)].map((_, i) => (
+                  <Star
+                    key={i}
+                    size={18}
+                    className="text-yellow-500 fill-yellow-500"
+                  />
+                ))}
               </div>
-            </SwiperSlide>
+
+              <p className="text-gray-300 text-lg leading-relaxed mb-8 flex-grow">
+                &ldquo;{item.text}&rdquo;
+              </p>
+
+              <div className="flex items-center gap-4 border-t border-white/5 pt-6">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-white font-bold text-sm">
+                  {item.name.charAt(0)}
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold text-sm">
+                    {item.name}
+                  </h4>
+                  <p className="text-xs text-purple-400">{item.role}</p>
+                </div>
+              </div>
+            </div>
           ))}
-        </Swiper>
+        </div>
 
       </div>
     </section>

@@ -1,25 +1,17 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 
-export default function Loader() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
+export default function Loader({ show }: { show: boolean }) {
   return (
     <AnimatePresence>
-      {loading && (
+      {show && (
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ 
             y: -1000,
-            transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.2 } 
+            transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } 
           }}
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#050638]"
         >

@@ -17,7 +17,7 @@ body {
   color: #ffffff;
   min-height: 100vh; 
   overflow-x: hidden;
-  background: radial-gradient(circle at 50% -20%, #1e1b4b, #020617 70%);
+  /* background: radial-gradient(circle at 50% -20%, #1e1b4b, #020617 70%); */
   background-attachment: fixed;
 }
 .ai-bg {
@@ -80,6 +80,25 @@ body {
   100% { transform: translateX(100%); }
 }
 
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -97,3 +116,59 @@ body {
 .glow-sm {
   box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
 }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.progress-bar {
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: growBar 1.5s ease-out forwards;
+}
+
+@keyframes growBar {
+  to {
+    transform: scaleX(var(--target-scale));
+  }
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+details[open] > div {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease forwards;
+  transform: translateY(20px);
+}
+
