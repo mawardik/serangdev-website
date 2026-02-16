@@ -4,7 +4,7 @@ const packages = [
   {
     name: "Starter Personal",
     badge: "Personal / Profesional",
-    price: "Rp 1.9jt",
+    price: "Rp 1.5jt",
     desc: "Website profesional untuk personal branding dan jasa individu.",
     features: [
       "1–5 Halaman Website",
@@ -20,7 +20,7 @@ const packages = [
   {
     name: "UMKM Growth",
     badge: "UMKM & Bisnis",
-    price: "Rp 3.5jt",
+    price: "Rp 2.5jt",
     desc: "Solusi lengkap untuk UMKM yang ingin scale dan meningkatkan kredibilitas.",
     features: [
       "Up to 10 Halaman",
@@ -37,7 +37,7 @@ const packages = [
   {
     name: "Institusi & Pendidikan",
     badge: "Sekolah / Desa / Instansi",
-    price: "Rp 9.9jt",
+    price: "Rp 7.5jt",
     desc: "Website resmi untuk lembaga pendidikan dan instansi pemerintah.",
     features: [
       "Unlimited Structured Pages",
@@ -149,9 +149,8 @@ export default function Pricing() {
                 </ul>
               </details>
 
-              {/* CTA */}
               <a
-                href={`https://wa.me/628xxxxxxxxxx?text=Halo SerangDev, saya tertarik dengan paket ${pkg.name}`}
+                href={`https://wa.me/628568709200?text=Halo SerangDev, saya tertarik dengan paket ${pkg.name}`}
                 target="_blank"
                 className={`mt-auto group flex items-center justify-center gap-2 w-full py-3 rounded-xl font-semibold transition-all
                 ${

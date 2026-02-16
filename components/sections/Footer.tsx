@@ -37,6 +37,7 @@ export default function Footer() {
                 <a
                   key={i}
                   href="#"
+                  aria-label="sosial media"
                   className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-purple-600 hover:border-purple-500 transition"
                 >
                   <Icon size={18} />
@@ -51,7 +52,7 @@ export default function Footer() {
               {["Web Development", "UI/UX Design", "SaaS Solution", "WebApps"].map(
                 (item) => (
                   <li key={item}>
-                    <a href="#" className="hover:text-purple-400 transition">
+                    <a href="#" aria-label="layanan" className="hover:text-purple-400 transition">
                       {item}
                     </a>
                   </li>
@@ -65,7 +66,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               {["About Us", "Portfolio", "Careers", "Blog"].map((item) => (
                 <li key={item}>
-                  <a href="#" className="hover:text-purple-400 transition">
+                  <a href="#" aria-label="kami" className="hover:text-purple-400 transition">
                     {item}
                   </a>
                 </li>
@@ -104,13 +105,13 @@ export default function Footer() {
           </div>
 
           <div className="flex gap-8 uppercase tracking-wide">
-            <a href="#" className="hover:text-purple-400 transition">
+            <a href="#" aria-label="privasi" className="hover:text-purple-400 transition">
               Privacy
             </a>
-            <a href="#" className="hover:text-purple-400 transition">
+            <a href="#" aria-label="terms & Condition" className="hover:text-purple-400 transition">
               Terms
             </a>
-            <a href="#" className="hover:text-purple-400 transition">
+            <a href="#" aria-label="cookies" className="hover:text-purple-400 transition">
               Cookies
             </a>
           </div>

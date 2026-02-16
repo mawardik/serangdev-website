@@ -11,11 +11,10 @@ export default function ConsultationModal({ isOpen, onClose }: Props) {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
-  const whatsappNumber = "6281234567890";
+  const whatsappNumber = "628568709200";
   const isSubmitting = useRef(false);
   const formRef = useRef<HTMLFormElement>(null);
 
-  // Reset state setiap modal dibuka
   useEffect(() => {
     if (isOpen) {
       setLoading(false);
@@ -63,10 +62,9 @@ export default function ConsultationModal({ isOpen, onClose }: Props) {
       setSuccess(true);
       formRef.current?.reset();
 
-      // Tutup modal setelah 3 detik
       setTimeout(() => {
         handleClose();
-      }, 3000);
+      }, 5000);
 
     } catch {
       setError("Terjadi kesalahan koneksi. Silakan coba lagi.");

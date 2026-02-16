@@ -4,7 +4,6 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20 px-6">
       
-      {/* Background Ambience */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10 opacity-40 pointer-events-none">
         <div className="absolute top-0 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply blur-[128px] opacity-60" />
         <div className="absolute top-0 right-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply blur-[128px] opacity-60" />
@@ -13,7 +12,6 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         
-        {/* Left Content */}
         <div className="relative z-10 animate-fade-in-up">
 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-sm font-medium mb-6">
@@ -21,7 +19,7 @@ export default function Hero() {
               <span className="absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75 animate-ping"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
             </span>
-            Halo SerangDev
+            👋 Halo Dev...
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight text-white">
@@ -62,9 +60,9 @@ export default function Hero() {
               <Zap className="w-8 h-8 text-yellow-400 fill-yellow-400/20" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors">
+              <h2 className="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors">
                 Lighting Fast
-              </h3>
+              </h2>
               <p className="text-sm text-gray-400 mt-2">Score 90+ Pagespeed</p>
             </div>
           </div>
@@ -74,9 +72,9 @@ export default function Hero() {
               <Shield className="w-8 h-8 text-green-400" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors">
+              <h2 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors">
                 Secure Core
-              </h3>
+              </h2>
               <p className="text-sm text-gray-400 mt-2">End-to-end Encryption</p>
             </div>
           </div>
@@ -86,9 +84,9 @@ export default function Hero() {
               <Cpu className="w-10 h-10 text-purple-400" />
             </div>
             <div>
-              <h3 className="text-lg md:text-xl font-bold text-white">
+              <h2 className="text-lg md:text-xl font-bold text-white">
                 Modern Tech Stack
-              </h3>
+              </h2>
               <p className="text-sm text-gray-400 font-mono tracking-tighter">
                 Laravel • Next.js • React • Vue
               </p>

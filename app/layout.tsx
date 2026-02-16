@@ -14,12 +14,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://serangdev.com"),
 
   title: {
-    default: "SerangDev | Jasa Pembuatan Website Profesional Serang & Banten",
+    default: "SerangDev | Web Development Agency Serang & Banten",
     template: "%s | SerangDev",
   },
 
   description:
-    "Jasa pembuatan website profesional di Serang & Banten. Website cepat, modern, SEO friendly untuk UMKM, Instansi Pemerintah, Lembaga Pendidikan & perusahaan.",
+    "Jasa pembuatan website profesional di Serang & Banten. Website cepat, modern, SEO friendly untuk UMKM, Instansi Pemerintah, Lembaga Pendidikan, Perusahaan & Personal Portofolio.",
 
   keywords: [
     "jasa pembuatan website serang",
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: "https://serangdev.com",
-    title: "SerangDev | Website Profesional Serang & Banten",
+    title: "SerangDev | Web Development Agency",
     description:
-      "Website modern, cepat, dan SEO optimized untuk UMKM & perusahaan.",
+      "Website development profesional modern, cepat, dan SEO optimized untuk UMKM, Instansi Pemerintah, Lembaga Pendidikan & perusahaan.",
     siteName: "SerangDev",
     images: [
       {
@@ -66,9 +66,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "SerangDev | Jasa Website Profesional",
+    title: "SerangDev | Web Development Agency",
     description:
-      "Website cepat & modern untuk bisnis di Serang & Banten.",
+      "Website development profesional, cepat & modern untuk bisnis di Serang & Banten.",
     images: ["/og-image.jpg"],
   },
 
@@ -89,7 +89,6 @@ export default function RootLayout({
   return (
     <html lang="id" className={bricolage.variable}>
       <head>
-        {/* Google Tag Manager Script (HEAD) */}
         <Script id="gtm-script" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];
@@ -105,8 +104,6 @@ export default function RootLayout({
       </head>
 
       <body className="bg-[#050638] text-white antialiased">
-
-        {/* Google Tag Manager (NOSCRIPT - BODY) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-T3THR8BD"
@@ -137,7 +134,7 @@ export default function RootLayout({
               },
               areaServed: "Banten",
               description:
-                "Jasa pembuatan website profesional untuk UMKM dan perusahaan di Serang & Banten.",
+                "Jasa pembuatan website profesional untuk UMKM, Lembaga, Instansi dan Perusahaan di Serang & Banten.",
             }),
           }}
         />

@@ -9,6 +9,10 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
 
+  experimental: {
+    optimizePackageImports: ["framer-motion"],
+  },
+
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
@@ -38,5 +42,6 @@ const nextConfig = {
     ];
   },
 };
+
 
 export default withBundleAnalyzer(nextConfig);

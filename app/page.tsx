@@ -1,18 +1,19 @@
+import dynamic from "next/dynamic";
 import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
-import LogoSlider from "@/components/sections/LogoSlider";
-import WhyChoose from "@/components/sections/WhyChoose";
-import Portfolio from "@/components/sections/Portfolio";
-import HowWeWork from "@/components/sections/HowWeWork";
-import TechStack from "@/components/sections/TechStack";
-import Pricing from "@/components/sections/Pricing";
-import Testimonial from "@/components/sections/Trust";
-import FAQ from "@/components/sections/Faq";
-import FinalCTA from "@/components/sections/FinalCTA";
-import Experience from "@/components/sections/Experience";
 import StickyWA from "@/components/ui/StickyWA";
 import Footer from "@/components/sections/Footer";
-import dynamic from "next/dynamic";
+
+const LogoSlider = dynamic(() => import("@/components/sections/LogoSlider"), { ssr: false });
+const WhyChoose = dynamic(() => import("@/components/sections/WhyChoose"));
+const Portfolio = dynamic(() => import("@/components/sections/Portfolio"));
+const Experience = dynamic(() => import("@/components/sections/Experience"));
+const HowWeWork = dynamic(() => import("@/components/sections/HowWeWork"));
+const TechStack = dynamic(() => import("@/components/sections/TechStack"));
+const Pricing = dynamic(() => import("@/components/sections/Pricing"));
+const Testimonial = dynamic(() => import("@/components/sections/Trust"));
+const FAQ = dynamic(() => import("@/components/sections/Faq"));
+const FinalCTA = dynamic(() => import("@/components/sections/FinalCTA"));
 
 const Particles = dynamic(() => import("@/components/ui/Particles"), {
   ssr: false,
@@ -22,8 +23,7 @@ export default function Home() {
   return (
     <>
       <Particles />
-
-      <main className="relative bg-transparent overflow-x-hidden">
+      <main className="relative overflow-x-hidden">
         <Header />
         <Hero />
         <LogoSlider />

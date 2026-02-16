@@ -74,9 +74,9 @@ export default function Trust() {
                   {item.name.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold text-sm">
+                  <h3 className="text-white font-semibold text-sm">
                     {item.name}
-                  </h4>
+                  </h3>
                   <p className="text-xs text-purple-400">{item.role}</p>
                 </div>
               </div>

@@ -8,12 +8,10 @@ export default function TechSpec() {
   return (
     <section className="py-32 px-6 relative overflow-hidden">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-
-        {/* Left Content */}
         <div className="animate-fade-in-up">
           <h2 className="text-4xl font-bold text-white leading-tight">
             Technology priority,{" "}
-            <span className="text-gradient">Peforma Tanpa Batas</span>
+            <span className="text-gradient">Performa Tanpa Batas</span>
           </h2>
 
           <p className="mt-6 text-gray-400 leading-relaxed">

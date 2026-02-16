@@ -11,8 +11,15 @@ export default function Header() {
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -27,16 +34,17 @@ export default function Header() {
     <>
       <header className="fixed top-0 w-full z-50 px-6 pt-6">
         <nav
-          className={`max-w-6xl mx-auto transition-all duration-300 rounded-2xl px-6 py-4 flex justify-between items-center ${
+          className={`max-w-6xl mx-auto rounded-2xl px-6 py-4 flex justify-between items-center transition-all duration-300 ${
             scrolled
-              ? "glass backdrop-blur-xl border border-white/10 shadow-xl"
+              ? "bg-white/5 backdrop-blur-md border border-white/10 shadow-lg"
               : "bg-transparent"
           }`}
         >
-          <a href="/" className="flex items-center">
+          {/* Logo */}
+          <a href="/" aria-label="Beranda SerangDev" className="flex items-center">
             <Image
               src="/serangdev-Hlight.webp"
-              alt="SerangDev"
+              alt="SerangDev Logo"
               width={150}
               height={40}
               priority
@@ -44,6 +52,7 @@ export default function Header() {
             />
           </a>
 
+          {/* Desktop Nav */}
           <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.name}>
@@ -57,8 +66,10 @@ export default function Header() {
             ))}
           </ul>
 
+          {/* Desktop CTA */}
           <div className="hidden md:block">
             <button
+              aria-label="Mulai konsultasi project"
               onClick={() => setModalOpen(true)}
               className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold text-sm rounded-xl hover:opacity-90 transition"
             >
@@ -66,16 +77,19 @@ export default function Header() {
             </button>
           </div>
 
+          {/* Mobile Menu Button */}
           <button
+            aria-label="Toggle navigasi mobile"
             className="md:hidden text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X /> : <Menu />}
+            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </nav>
 
+        {/* Mobile Dropdown */}
         {mobileMenuOpen && (
-          <div className="absolute top-24 left-6 right-6 glass backdrop-blur-xl p-8 rounded-2xl md:hidden border border-white/10 shadow-xl">
+          <div className="absolute top-24 left-6 right-6 bg-white/5 backdrop-blur-md border border-white/10 shadow-lg p-8 rounded-2xl md:hidden">
             <ul className="flex flex-col gap-6 text-center">
               {navLinks.map((link) => (
                 <li key={link.name}>
@@ -90,13 +104,15 @@ export default function Header() {
               ))}
 
               <hr className="border-white/10" />
+
               <li>
                 <button
+                  aria-label="Konsultasi sekarang"
                   onClick={() => {
                     setMobileMenuOpen(false);
                     setModalOpen(true);
                   }}
-                  className="w-full py-4 bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-xl font-semibold"
+                  className="w-full py-4 bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-xl font-semibold hover:opacity-90 transition"
                 >
                   Konsultasi Sekarang
                 </button>
