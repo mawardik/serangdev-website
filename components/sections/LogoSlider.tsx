@@ -1,11 +1,12 @@
 const logos = [
-  "Google Cloud",
-  "DigitalOcean",
-  "Vercel",
-  "Stripe",
-  "Midtrans",
+  "PHP",
+  "Wordpress",
   "Laravel",
+  "Next.js",
+  "Vue.Js",
   "React",
+  "Tailwind",
+  "Other Framework",
 ];
 
 export default function LogoSlider() {

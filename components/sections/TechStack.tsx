@@ -22,9 +22,9 @@ export default function TechSpec() {
 
           <div className="mt-10 flex flex-wrap gap-4">
             {[
-              "Next.js 14",
+              "Next.js",
               "React",
-              "Tailwind CSS",
+              "Tailwind",
               "Laravel",
               "PostgreSQL",
               "PHP",

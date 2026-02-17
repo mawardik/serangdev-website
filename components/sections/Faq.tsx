@@ -83,16 +83,16 @@ export default function FAQ() {
                 className="group glass rounded-xl border border-white/5 p-6 transition-all duration-300 open:border-purple-500/30"
               >
                 <summary className="flex justify-between items-center cursor-pointer list-none">
-                  <span className="font-semibold text-white group-open:text-purple-300 transition-colors">
+                  <h2 className="font-semibold text-white group-open:text-purple-300 transition-colors">
                     {faq.q}
-                  </span>
+                  </h2>
                   <span className="ml-4 w-8 h-8 rounded-lg border border-white/10 flex items-center justify-center text-gray-400 group-open:bg-purple-500 group-open:text-white group-open:border-purple-500 transition-all">
                     <Plus size={16} className="group-open:rotate-45 transition-transform duration-300" />
                   </span>
                 </summary>
 
                 <div className="mt-4 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">
-                  <p>{faq.a}</p>
+                  <h3>{faq.a}</h3>
                 </div>
               </details>
             ))}
