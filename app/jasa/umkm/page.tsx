@@ -1,4 +1,7 @@
 import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import SiloSidebar from "@/components/layout/SiloSidebar";
 
 export const metadata: Metadata = {
   title: "Jasa Website UMKM Profesional & Terjangkau | SerangDev",
@@ -14,142 +17,135 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://serangdev.com/jasa/umkm",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  openGraph: {
-    title: "Jasa Website UMKM Profesional | SerangDev",
-    description:
-      "Solusi website profesional untuk UMKM di seluruh Indonesia.",
-    url: "https://serangdev.com/jasa/umkm",
-    siteName: "SerangDev",
-    locale: "id_ID",
-    type: "website",
-  },
 };
 
 export default function JasaUMKMPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Jasa Pembuatan Website UMKM",
+    "description": "Solusi website profesional, cepat, dan SEO friendly untuk pelaku UMKM di Indonesia.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "SerangDev",
+      "url": "https://serangdev.com",
+      "logo": "https://serangdev.com/serangdev-Hlight.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Serang",
+        "addressRegion": "Banten",
+        "addressCountry": "ID"
+      }
+    },
+    "areaServed": {
+        "@type": "Country",
+        "name": "Indonesia"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Layanan Web Dev",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Website Katalog UMKM"
+          }
+        }
+      ]
+    }
+  };
+
   return (
-    <main className="min-h-screen bg-[#050638] text-white px-6 py-24">
-      <div className="max-w-4xl mx-auto space-y-12">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
-        {/* HERO */}
-        <section className="space-y-6">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-            Jasa Website UMKM Profesional & Terjangkau
-          </h1>
+      <div className="grid grid-cols-1 lg:grid-cols-10 gap-12 max-w-7xl mx-auto px-4 pt-10 pb-20">
+        <article className="lg:col-span-7 space-y-12">
 
-          <p className="text-lg text-gray-300 leading-relaxed">
-            Kami menyediakan jasa pembuatan website UMKM yang dirancang untuk
-            membantu pelaku usaha meningkatkan kredibilitas, memperluas pasar,
-            dan meningkatkan penjualan secara online. Website bukan lagi
-            kebutuhan sekunder, melainkan fondasi utama pertumbuhan bisnis di
-            era digital.
-          </p>
-        </section>
-
-        {/* MASALAH UMKM */}
-        <section className="space-y-6">
-          <h2 className="text-2xl font-semibold">
-            Tantangan UMKM di Era Digital
-          </h2>
-
-          <p className="text-gray-300 leading-relaxed">
-            Banyak UMKM masih mengandalkan media sosial sebagai satu-satunya
-            saluran pemasaran. Padahal, tanpa website profesional, bisnis Anda
-            sulit membangun kredibilitas jangka panjang dan sulit ditemukan di
-            Google.
-          </p>
-
-          <p className="text-gray-300 leading-relaxed">
-            Website UMKM profesional memungkinkan bisnis Anda tampil lebih
-            terpercaya, memiliki katalog produk yang rapi, dan siap menerima
-            calon pelanggan dari seluruh Indonesia.
-          </p>
-        </section>
-
-        {/* SOLUSI */}
-        <section className="space-y-6">
-          <h2 className="text-2xl font-semibold">
-            Solusi Website untuk UMKM di Seluruh Indonesia
-          </h2>
-
-          <p className="text-gray-300 leading-relaxed">
-            SerangDev membantu UMKM dari berbagai kota di Indonesia untuk
-            memiliki website yang cepat, mobile-friendly, dan SEO optimized.
-            Dengan struktur yang tepat, website Anda berpotensi muncul pada
-            pencarian seperti <strong>jasa website UMKM</strong> atau
-            <strong> bikin website untuk UMKM</strong>.
-          </p>
-
-          <p className="text-gray-300 leading-relaxed">
-            Kami memahami keterbatasan anggaran UMKM, sehingga solusi yang
-            kami tawarkan tetap terjangkau tanpa mengorbankan kualitas dan
-            performa.
-          </p>
-        </section>
-
-        {/* FITUR */}
-        <section className="space-y-6">
-          <h2 className="text-2xl font-semibold">
-            Fitur Website UMKM yang Kami Tawarkan
-          </h2>
-
-          <ul className="space-y-4 text-gray-300">
-            <li>✔ Desain modern & responsive</li>
-            <li>✔ Halaman profil usaha</li>
-            <li>✔ Katalog produk / jasa</li>
-            <li>✔ Integrasi WhatsApp</li>
-            <li>✔ Optimasi SEO dasar</li>
-            <li>✔ Kecepatan loading tinggi</li>
-          </ul>
-        </section>
-
-        {/* MANFAAT */}
-        <section className="space-y-6">
-          <h2 className="text-2xl font-semibold">
-            Manfaat Website bagi UMKM
-          </h2>
-
-          <p className="text-gray-300 leading-relaxed">
-            Dengan website profesional, UMKM dapat meningkatkan kepercayaan
-            pelanggan, menjangkau pasar lebih luas, serta membangun brand yang
-            lebih kuat. Website juga memberikan kontrol penuh atas aset
-            digital bisnis Anda.
-          </p>
-        </section>
-
-        <section className="space-y-6 border-t border-white/10 pt-12">
-            <h2 className="text-2xl font-semibold">
-                Dukungan Regional & Lokal
-            </h2>
-
-            <p className="text-gray-300">
-                Jika Anda berada di Banten, kami juga menyediakan layanan regional melalui{" "}
-                <a href="/jasa/banten" className="text-blue-400 underline">
-                jasa website Banten
-                </a>, serta layanan khusus kota melalui{" "}
-                <a href="/jasa/serang" className="text-blue-400 underline">
-                jasa pembuatan website Serang
-                </a>.
+          <section className="py-0 space-y-6">
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight text-white mt-0">
+              Jasa Website UMKM Profesional & Terjangkau
+            </h1>
+            <Image
+              src="/umkm.webp"
+              alt="Jasa Website UMKM Profesional SerangDev"
+              width={900}
+              height={500}
+              className="rounded-xl border border-white/10 shadow-lg"
+              priority
+            />
+            <p className="text-lg text-gray-300 leading-relaxed">
+              Website bukan lagi sekadar pelengkap, melainkan aset digital utama
+              bagi UMKM yang ingin berkembang. Dengan website profesional,
+              bisnis Anda terlihat lebih terpercaya di mata pelanggan.
             </p>
-        </section>
+          </section>
 
+          <section className="py-0 space-y-6">
+            <h2 className="text-3xl font-semibold text-white">Mengapa UMKM Membutuhkan Website?</h2>
+            <div className="space-y-5">
+                <div className="space-y-2">
+                    <h3 className="text-xl font-medium text-blue-400">1. Kehilangan Traffic Organik</h3>
+                    <p className="text-gray-300 leading-relaxed">
+                    Tanpa website, bisnis sulit muncul di pencarian seperti <strong>jasa website UMKM</strong>. Ini membuat potensi pelanggan lari ke kompetitor.
+                    </p>
+                </div>
+                <div className="space-y-2">
+                    <h3 className="text-xl font-medium text-blue-400">2. Ketergantungan Media Sosial</h3>
+                    <p className="text-gray-300 leading-relaxed">
+                    Media sosial memiliki algoritma yang berubah-ubah. Website adalah rumah milik Anda sendiri yang aman dari perubahan pihak ketiga.
+                    </p>
+                </div>
+            </div>
+          </section>
 
-        {/* CTA */}
-        <section className="text-center pt-12 space-y-6">
-          <h2 className="text-2xl font-semibold">
-            Siap Meningkatkan UMKM Anda Secara Digital?
-          </h2>
+          <section className="py-0 bg-white/5 p-7 md:p-10 rounded-2xl border border-white/10 space-y-6">
+            <h2 className="text-2xl font-semibold text-white">Fitur Website UMKM SerangDev</h2>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-5 text-gray-300">
+              <li className="flex items-start gap-2">
+                <span className="text-blue-500 font-bold">✔</span> 
+                <span>Desain Modern & Responsive</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-blue-500 font-bold">✔</span> 
+                <span>Katalog Produk Integrasi WA</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-blue-500 font-bold">✔</span> 
+                <span>Optimasi SEO On-Page 100%</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-blue-500 font-bold">✔</span> 
+                <span>Hosting & Domain Aman</span>
+              </li>
+            </ul>
+          </section>
 
-          <p className="text-gray-300">
-            Konsultasikan kebutuhan website UMKM Anda dan bangun fondasi
-            digital yang kuat bersama SerangDev.
-          </p>
-        </section>
+          <section className="py-0 space-y-4 border-t border-white/10 pt-10">
+            <h2 className="text-2xl font-semibold text-white">Layanan Kami di Wilayah Lain</h2>
+            <p className="text-gray-300 italic">
+              Kami juga melayani area spesifik untuk hasil SEO yang lebih lokal dan tertarget:
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/jasa/serang" className="px-5 py-2 bg-blue-600/10 text-blue-400 rounded-lg border border-blue-600/30 hover:bg-blue-600 hover:text-white transition-all text-sm font-medium">
+                Jasa Website Serang
+              </Link>
+              <Link href="/jasa/banten" className="px-5 py-2 bg-blue-600/10 text-blue-400 rounded-lg border border-blue-600/30 hover:bg-blue-600 hover:text-white transition-all text-sm font-medium">
+                Jasa Website Banten
+              </Link>
+            </div>
+          </section>
 
+        </article>
+
+        <div className="lg:col-span-3">
+          <SiloSidebar />
+        </div>
       </div>
-    </main>
+    </>
   );
 }
